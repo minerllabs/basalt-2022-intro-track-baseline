@@ -1,14 +1,18 @@
 import logging
 import coloredlogs
+import pickle
 
 import aicrowd_gym
 import minerl
 
 from config import EVAL_EPISODES, EVAL_MAX_STEPS
+from openai_vpt.agent import MineRLAgent
 
 coloredlogs.install(logging.DEBUG)
 
 MINERL_GYM_ENV = 'MineRLObtainDiamondShovel-v0'
+MODEL = 'data/VPT-models/2x.model'
+WEIGHTS = 'data/VPT-models/rl-from-early-game-2x.weights'
 
 
 def main():
@@ -16,20 +20,23 @@ def main():
     #       Otherwise your submission will fail.
     env = aicrowd_gym.make(MINERL_GYM_ENV)
 
-    # Load your model here
-    # NOTE: The trained parameters must be inside "train" directory!
-    # model = None
+    # Load the model
+    agent_parameters = pickle.load(open(MODEL, "rb"))
+    policy_kwargs = agent_parameters["model"]["args"]["net"]["args"]
+    pi_head_kwargs = agent_parameters["model"]["args"]["pi_head_opts"]
+    pi_head_kwargs["temperature"] = float(pi_head_kwargs["temperature"])
+    agent = MineRLAgent(env, policy_kwargs=policy_kwargs, pi_head_kwargs=pi_head_kwargs)
+    agent.load_weights(WEIGHTS)
 
     for i in range(EVAL_EPISODES):
         obs = env.reset()
-        done = False
+        agent.reset()
         for step_counter in range(EVAL_MAX_STEPS):
 
             # Step your model here.
-            # Currently, it's doing random actions
-            random_act = env.action_space.sample()
+            minerl_action = agent.get_action(obs)
 
-            obs, reward, done, info = env.step(random_act)
+            obs, reward, done, info = env.step(minerl_action)
 
             if done:
                 break
