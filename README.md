@@ -6,6 +6,8 @@ This repository is the MineRL BASALT 2022 Competition Intro Track **baseline sub
 
 MineRL BASALT Intro Track is designed to help you get familiar with the submission system and MineRL. Your task is to create an agent which can obtain a diamond shovel, starting from a random, fresh world.
 
+The baseline agent gets a diamond about 10% of the time and sometimes crafts a diamond pickaxe. Your task is to make it craft a diamond shovel.
+
 See [the AICrowd competition page](https://www.aicrowd.com/challenges/neurips-2022-minerl-basalt-competition) for further information.
 
 ## Setting up
