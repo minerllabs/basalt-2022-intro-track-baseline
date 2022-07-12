@@ -1,7 +1,7 @@
 {
   "challenge_id": "neurips-2022-minerl-basalt-competition",
   "authors": ["aicrowd-bot"],
-  "description": "Test Model for MineRL BASALT Challenge Intro Track",
+  "description": "Baseline Model for MineRL BASALT Challenge Intro Track",
   "licence": "MIT",
   "gpu": true,
   "debug": true,
