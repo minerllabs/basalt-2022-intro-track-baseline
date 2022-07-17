@@ -5,4 +5,5 @@
 import test
 
 # Testing Phase
-test.main()
+if __name__ == "__main__":
+    test.main()
