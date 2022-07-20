@@ -2,7 +2,7 @@
 
 [![Discord](https://img.shields.io/discord/565639094860775436.svg)](https://discord.gg/BT9uegr)
 
-This repository is the MineRL BASALT 2022 Competition Intro Track **baseline submission template**.
+This repository is the MineRL BASALT 2022 Competition Intro Track baseline solution.
 
 MineRL BASALT Intro Track is designed to help you get familiar with the submission system and MineRL. Your task is to create an agent which can obtain a diamond shovel, starting from a random, fresh world.
 
