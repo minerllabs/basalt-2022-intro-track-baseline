@@ -25,6 +25,8 @@ Place these files under `data` to match the following structure:
 │       └── rl-from-early-game-2x.weights
 ```
 
+Before submitting, remember to add the models. For that you need to use `git lfs`. See instructions [here](https://discourse.aicrowd.com/t/how-to-upload-large-files-size-to-your-submission/2304).
+
 
 ## Visualizing the model
 
@@ -37,3 +39,5 @@ This will run a single short episode. If you want to see complete episodes, set 
 ## How to Submit a Model on AICrowd.
 
 To submit this baseline agent follow the [submission instructions](https://github.com/minerllabs/basalt_intro_track_2022_competition_submission_template), but use this repo instead of the starter kit repo.
+
+Remember to add the newly added model files as part of the submission!
