@@ -7,7 +7,7 @@ dependencies:
   - python=3.7
   - pip
   - py-opencv
-  - cudatoolkit=10.0
+  - cudatoolkit=10.2
   - pytorch=1.9.0
   - pip:
     - git+https://github.com/minerllabs/minerl
